@@ -35,11 +35,11 @@ const ChooseSituation = ({navigation}) => {
             </View>
           </Pressable>
 
-          {/* <Pressable>
+          <Pressable  onPress={() => navigation.navigate('FoodRecommendation')}>
             <View style={styles.button2}>
               <Btn content={"Food Recommendations"} />
             </View>
-          </Pressable> */}
+          </Pressable>
 
           <Pressable onPress={() => navigation.navigate('Biodata')}>
             <View style={styles.button2}>

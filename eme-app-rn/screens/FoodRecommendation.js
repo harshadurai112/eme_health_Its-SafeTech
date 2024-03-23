@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text,StyleSheet } from 'react-native';
 import OpenAI from 'openai';
-import * as Font from 'expo-font';
+// import * as Font from 'expo-font';
 
 const openai = new OpenAI({
   apiKey: 'API Key Here',
@@ -9,18 +9,18 @@ const openai = new OpenAI({
 
 
 
-const ChatGPTComponent = () => {
+const FoodRecommendation = ({navigation}) => {
 
-  React.useEffect(() => {
-    async function loadFont() {
-      await Font.loadAsync({
-        'Outfit-Bold': require('./assets/fonts/Outfit-Bold.ttf'),
-        'Outfit-SemiBold': require('./assets/fonts/Outfit-SemiBold.ttf'),
-        'Outfit-Regular': require('./assets/fonts/Outfit-Thin.ttf') // Adjust the path accordingly
-      });
-    }
-    loadFont();
-  }, []);
+  // React.useEffect(() => {
+  //   async function loadFont() {
+  //     await Font.loadAsync({
+  //       'Outfit-Bold': require('./assets/fonts/Outfit-Bold.ttf'),
+  //       'Outfit-SemiBold': require('./assets/fonts/Outfit-SemiBold.ttf'),
+  //       'Outfit-Regular': require('./assets/fonts/Outfit-Thin.ttf') // Adjust the path accordingly
+  //     });
+  //   }
+  //   loadFont();
+  // }, []);
 
 
   const [userInput, setUserInput] = useState('');
@@ -104,6 +104,6 @@ const styles = StyleSheet.create({
   
 });
 
-export default ChatGPTComponent;
+export default FoodRecommendation;
 
 

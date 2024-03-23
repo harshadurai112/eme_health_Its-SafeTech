@@ -26,6 +26,7 @@
     "expo-sensors": "^12.9.1",
     "expo-status-bar": "~1.11.1",
     "native-base": "^3.4.28",
+    "openai": "^4.29.2",
     "react": "18.2.0",
     "react-native": "^0.73.6",
     "react-native-date-picker": "^4.3.6",

@@ -1,0 +1,77 @@
+.emePatCard {
+    width: 25vw;
+    height: 12.5vw;
+    border-radius: 10px;
+    border: 1px solid #a4a4a4;
+    background-color: #ededed;
+}
+
+.emePatCard1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 25px;
+}
+
+.patName {
+    font-size: 1.4vw;
+    font-weight: 600;
+    padding-left: 15px;
+}
+
+.patBlood {
+    font-size: 1.1vw;
+    padding-right: 20px;
+    color: #DB4954;
+}
+
+.patMobile {
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+.admiTime {
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+.trackBtnDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.trackBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7vw 1vw 0.7vw 1vw;
+    font-size: 1.2vw;
+    background-color: #DB4954;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    /* margin-left: auto; */
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.trackBtn:hover, .detBtn:hover {
+    opacity: 50%;
+}
+
+.detBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7vw 1vw 0.7vw 1vw;
+    font-size: 1.2vw;
+    background-color: #497cdb;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    /* margin-left: auto; */
+    margin-top: 15px;
+    cursor: pointer;
+}

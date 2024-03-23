@@ -11,6 +11,7 @@ import EmergencyContact from '../screens/EmergencyContact';
 import AccidentDetection from '../screens/AccidentDetection';
 import Notification from '../screens/notification';
 import Medication from '../screens/Medication';
+import FoodRecommendation from '../screens/FoodRecommendation';
 
 
 const Stack = createStackNavigator();
@@ -40,6 +41,7 @@ export const AppStack = () => {
        <Stack.Screen options={options} name='Medication' component={Medication} />
        <Stack.Screen options={options} name='AccidentDetection' component={AccidentDetection} />
        <Stack.Screen options={options} name='Notification' component={Notification} />
+       <Stack.Screen options={options} name='FoodRecommendation' component={FoodRecommendation} />
 
       {/* <Stack.Screen options={options} name='Home' component={HomeScreen} /> */}
     </Stack.Navigator>
