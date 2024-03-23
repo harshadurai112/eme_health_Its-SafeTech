@@ -5,7 +5,6 @@ import '../../styles/page.css'
 import "../../styles/emergencyPatientCard.css"
 import '../../styles/appoinmentCard.css'
 import '../../styles/appoinmentForm.css'
-import '../../styles/availability.css'
 
 const inter = Inter({ subsets: ["latin"] });
 
