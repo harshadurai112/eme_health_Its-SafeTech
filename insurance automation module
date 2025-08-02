@@ -1,0 +1,19 @@
+from sklearn.ensemble import RandomForestClassifier
+import pandas as pd
+
+# Sample data
+data = pd.DataFrame({
+    'accident_severity': [0.9, 0.3, 0.6],
+    'age': [45, 70, 30],
+    'chronic_illness': [1, 1, 0],
+    'heart_rate': [110, 80, 95]
+})
+labels = ['High', 'Low', 'Medium']
+
+# Build model
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(data, labels)
+
+# Predict for a new patient
+new_patient = [[0.85, 60, 1, 120]]
+print(model.predict(new_patient))  # Output: ['High']
