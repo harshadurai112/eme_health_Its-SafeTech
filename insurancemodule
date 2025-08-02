@@ -1,0 +1,56 @@
+
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report, accuracy_score
+from sklearn.preprocessing import LabelEncoder
+
+# -------------------------
+# 1. Sample Data (Simulated)
+# -------------------------
+data = pd.DataFrame({
+    'accident_severity': [0.9, 0.3, 0.6, 0.8, 0.2, 0.7, 0.95, 0.5, 0.4, 0.85],  # From CNN
+    'age': [45, 70, 30, 60, 55, 40, 75, 33, 50, 62],                             # From EHR
+    'chronic_illness': [1, 1, 0, 1, 0, 0, 1, 0, 1, 1],                            # 1 = Yes, 0 = No
+    'heart_rate': [110, 80, 95, 105, 85, 100, 120, 90, 88, 115],                  # From sensors
+    'bp': [90, 120, 110, 95, 125, 100, 85, 115, 130, 88],                         # Blood Pressure
+    'hospitalizations_last_year': [2, 4, 1, 3, 0, 1, 5, 0, 2, 4],                 # From EHR
+    'priority': ['High', 'Low', 'Medium', 'High', 'Low', 'Medium', 'High', 'Low', 'Medium', 'High']  # Target
+})
+
+# -------------------------
+# 2. Preprocessing
+# -------------------------
+X = data.drop('priority', axis=1)   # Features
+y = data['priority']                # Labels
+
+# Encode labels (High/Medium/Low -> 0/1/2)
+le = LabelEncoder()
+y_encoded = le.fit_transform(y)
+
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(X, y_encoded, test_size=0.2, random_state=42)
+
+# -------------------------
+# 3. Build Random Forest Model
+# -------------------------
+model = RandomForestClassifier(
+    n_estimators=100,    # Number of trees
+    max_depth=5,         # Prevent overfitting
+    random_state=42
+)
+model.fit(X_train, y_train)
+
+# -------------------------
+# 4. Evaluate Model
+# -------------------------
+y_pred = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Classification Report:\n", classification_report(y_test, y_pred, target_names=le.classes_))
+
+# -------------------------
+# 5. Predict for a new patient
+# -------------------------
+new_patient = [[0.88, 65, 1, 118, 92, 3]]  # Example new patient
+prediction = model.predict(new_patient)
+print("Predicted Priority:", le.inverse_transform(prediction)[0])
